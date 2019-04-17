@@ -9,6 +9,7 @@ import urllib.request
 pages_back = 25
 base_url = 'http://www.stancenation.com/topics/car-features/page/'
 url_list = []
+downloadDirectory = "C:\\Images"
 
 for url in range(3, pages_back):
     url_list += [base_url + str(url)]
@@ -61,7 +62,7 @@ for url in range(0, len(article_urls)):
         
 for imglink in range(0, len(imglinks)):
     try:
-        urllib.request.urlretrieve(imglinks[imglink], "C:\\stancenaysh\\image" + str(imglink) + ".jpg")
+        urllib.request.urlretrieve(imglinks[imglink], downloadDirectory + str(imglink) + ".jpg")
         print("Downloaded" + str(imglink) + "images...")
         time.sleep(random.uniform(2.50, 5.129))
     except:
